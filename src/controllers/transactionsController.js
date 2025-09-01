@@ -63,7 +63,7 @@ export async function createTransaction (req, res) {
 export async function getUserTransactionSummary(req,res){
     const {userId} = req.params;
     if (!userId) return res.json({message: `Field required: id`});
-    if (isNaN(parseInt(userId))) return res.status(400).json({message: `Invalid input type of ${typeof id}`});
+    // if (isNaN(parseInt(userId))) return res.status(400).json({message: `Invalid input type of ${typeof id}`});
 
     try {
         const income = await sql`
