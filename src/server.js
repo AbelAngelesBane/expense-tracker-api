@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import rateLimiter from "./middleware/rateLimiter.js";
 import getTransactionRoute from './routes/transaction/getTransactionRoute.js'
 import { initDb } from "./config/db.js";
-import {job} from "./config/cron.js"
+import job from "./config/cron.js"
 
 dotenv.config();
 const app = express();
