@@ -76,7 +76,7 @@ export async function getUserTransactionSummary(req,res){
         const finalIncome = (parseFloat(income[0].income) ) ;
         const finalExpenses = parseFloat(expenses[0].expenses ) ;
 
-        const balance =  finalIncome - finalExpenses
+        const balance =  finalIncome - Math.abs(finalExpenses)
         console.log("parsed", balance)
         return res.status(200).json({message:{
             income:finalIncome ?? 0 ,
