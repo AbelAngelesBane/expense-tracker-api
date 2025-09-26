@@ -4,6 +4,7 @@ import rateLimiter from "./middleware/rateLimiter.js";
 import getTransactionRoute from './routes/transaction/getTransactionRoute.js'
 import { initDb } from "./config/db.js";
 import job from "./config/cron.js"
+import cors from "cors"
 
 dotenv.config();
 const app = express();
@@ -13,7 +14,7 @@ const PORT = process.env.PORT || 5001;
 //middleware or my returns will be undefined
 // .use for middleware
 //.get for routes
-
+app.use(cors())
 app.use(rateLimiter)
 app.use(express.json())
 
